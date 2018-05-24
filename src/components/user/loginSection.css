@@ -1,0 +1,25 @@
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-login input[type=text]{
+    height: 20px;
+    width: 200px;
+    text-indent: 4px;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.form-login input[type=text]:focus{
+    width: 220px;
+    height: 35px;
+}
+
+.form-login input[type=text]:first-child{
+    margin: 10px 0px;
+}
+
+.form-login input[type=submit]{
+    display: none;
+}
