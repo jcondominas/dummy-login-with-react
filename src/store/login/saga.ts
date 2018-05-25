@@ -1,11 +1,21 @@
 import {put, takeEvery} from "redux-saga/effects";
 import {getType} from "typesafe-actions";
 import {loggedInAction, loginAction} from "./actions";
+import {LoginActions} from "./types";
 
 
-function* logIn(){
+function* logIn(action: LoginActions) {
     // process user
-    yield put(loggedInAction("Token"))
+    if (action.type === getType(loginAction)) {
+        const token = "Token";
+        localStorage.setItem("user", JSON.stringify({
+            user: action.payload.user,
+            password: action.payload.password,
+            token
+        }));
+        yield put(loggedInAction(token))
+    }
+
 }
 
 export function* loginSaga() {
