@@ -4,8 +4,8 @@ import {loggedInAction, loginAction} from "./actions";
 import {LoginActions} from "./types";
 
 
-function* logIn(action: LoginActions) {
-    // process user
+export function* logIn(action: LoginActions) {
+    // process login
     if (action.type === getType(loginAction)) {
         const token = "Token";
         localStorage.setItem("user", JSON.stringify({
