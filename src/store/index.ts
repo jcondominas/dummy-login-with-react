@@ -9,7 +9,18 @@ export interface RootState {
     user: User
 }
 
+function loadUserInitialState(): User {
+    return JSON.parse(
+        localStorage.getItem("user") ||
+        JSON.stringify({user: "", password: "", token: ""})
+    );
+}
+
+const initState = {
+    user: loadUserInitialState()
+};
+
 const reduxSaga = createSagaMiddleware();
-export const store = createStore(loginReducers, composeWithDevTools(applyMiddleware(reduxSaga)));
+export const store = createStore(loginReducers, initState, composeWithDevTools(applyMiddleware(reduxSaga)));
 
 reduxSaga.run(loginSaga);

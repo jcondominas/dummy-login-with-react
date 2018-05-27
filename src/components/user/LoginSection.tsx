@@ -10,7 +10,7 @@ interface LoginSectionState {
     password: string
 }
 
-export class LoginSection extends React.Component<LogginSectionProps, LoginSectionState> {
+export class    LoginSection extends React.Component<LogginSectionProps, LoginSectionState> {
     constructor(props: LogginSectionProps) {
         super(props);
         this.state = {user: "", password: ""}

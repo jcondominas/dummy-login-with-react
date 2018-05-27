@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
-import {RootState} from "../store/index";
+import {RootState} from "../store";
 import {loginAction} from "../store/login/actions";
-import {UserPresenter} from "../components/user/UserPresenter";
+import {AccessSection} from "../components/user/AccessSection";
 
 export const UserContainer = connect(
     (state: RootState) => ({
@@ -11,4 +11,4 @@ export const UserContainer = connect(
     (dispatch) => ({
         onLogin: (user: string, password: string) => dispatch(loginAction(user, password))
     })
-)(UserPresenter);
+)(AccessSection);

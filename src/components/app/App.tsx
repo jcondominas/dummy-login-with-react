@@ -2,9 +2,9 @@ import * as React from 'react';
 import './App.css';
 
 import logo from './logo.svg';
-import {UserContainer} from "./containers/UserContainer";
+import {UserContainer} from "../../containers/UserContainer";
 import {Provider} from "react-redux";
-import {store} from "./store";
+import {store} from "../../store";
 
 class App extends React.Component {
     public render() {

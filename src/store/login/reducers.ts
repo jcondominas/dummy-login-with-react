@@ -4,14 +4,10 @@ import {User} from "./models";
 import {LoginActions} from "./types";
 import {combineReducers} from "redux";
 
-function loadUserInitialState(): User {
-    return JSON.parse(localStorage.getItem("user") || JSON.stringify({user: "", password: "", token: ""}));
-}
-
-const initState: User = loadUserInitialState();
+const initState: User = {user: "", token: "", password: ""};
 
 const loginReducer = (state: User = initState, action: LoginActions) => {
-    switch (action.type){
+    switch (action.type) {
         case getType(loginAction):
             return {...state, user: action.payload.user, password: action.payload.password};
         case getType(loggedInAction):

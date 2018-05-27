@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginSection should renders login section correctly 1`] = `
+<form
+  className="form-login"
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    placeholder="Username"
+    type="text"
+  />
+  <input
+    onChange={[Function]}
+    placeholder="Password"
+    type="text"
+  />
+  <input
+    type="submit"
+  />
+</form>
+`;
